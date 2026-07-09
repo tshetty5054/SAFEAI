@@ -1,0 +1,21 @@
+{
+  "name": "safeai-root",
+  "version": "1.0.0",
+  "description": "SAFEAI – Intelligent Personal Safety Companion root workspace",
+  "main": "index.js",
+  "scripts": {
+    "install:all": "npm run install:client && npm run install:server",
+    "install:client": "npm install --prefix client",
+    "install:server": "npm install --prefix server",
+    "postinstall": "npm run install:all",
+    "client": "npm run dev --prefix client",
+    "server": "npm run dev --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
